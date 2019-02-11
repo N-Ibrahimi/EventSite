@@ -17,12 +17,12 @@ ActiveRecord::Schema.define(version: 2019_02_11_115928) do
 
   create_table "attendances", force: :cascade do |t|
     t.string "stripe_customer_id"
-    t.bigint "attendee_id"
+    t.bigint "invited_id"
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
     t.index ["event_id"], name: "index_attendances_on_event_id"
+    t.index ["invited_id"], name: "index_attendances_on_invited_id"
   end
 
   create_table "events", force: :cascade do |t|
