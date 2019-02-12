@@ -5,10 +5,10 @@ salut,
 this repo contient the database of our EventSite for checking that it works correctly 
 please do theses steps 
 
--- bundle install 
--- rails db:create   if neccessary 
--- rails db:migrate 
--- rails db:seed 
+* bundle install 
+* rails db:create   if neccessary 
+* rails db:migrate 
+* rails db:seed 
 
 
 for sendig the mail plz create at first a user in rails cosole anf remember to use the YOPMAIL.com 
