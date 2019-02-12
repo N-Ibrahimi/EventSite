@@ -41,7 +41,7 @@ RSpec.describe Event, type: :model do
   context "associations" do
     it { should belong_to(:admin).class_name("User")}
     it { should have_many(:attendances)}
-    it { should have_many(:attendees).class_name("User").through(:attendances)}
+    it { should have_many(:inviteds).class_name("User").through(:attendances)}
   end
 
 
