@@ -3,13 +3,17 @@ User.destroy_all
 Event.destroy_all
 Attendance.destroy_all
 
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('events')
+ActiveRecord::Base.connection.reset_pk_sequence!('attendances')
+
 
 10.times do
   User.create!(
-    first_name: Faker::Name.unique.first_name, 
-    last_name: Faker::Name.unique.last_name, 
+    first_name: Faker::Name.first_name, 
+    last_name: Faker::Name.last_name, 
     email: Faker::Internet.unique.email, 
-    description: Faker::Lorem.characters(25)
+    description:Faker::Lorem.paragraph
     )
   print '.'
 end
@@ -18,12 +22,12 @@ puts '=== Users DB created ==='
 10.times do
   Event.create!(
     admin_id: User.all.sample.id, 
-    location: "Paris", 
+    location: Faker::Hobbit.location,
     price: rand(1..1000), 
-    title: Faker::Lorem.characters(10), 
-    description: Faker::Lorem.characters(25), 
+    title: Faker::Lorem.sentence, 
+    description:Faker::Lorem.paragraph, 
     duration: rand(1..10)*5, 
-    start_date: Time.now + 1.day
+    start_date:Faker::Date.between(Date.today,1.year.from_now)
     )
   print '.'
 end
