@@ -5,7 +5,7 @@ FactoryBot.define do
     title { Faker::Lorem.characters(10)}
     description { Faker::Lorem.characters(25) }
     price { Faker::Number.number(3) }
-    location { "Paris"}
+    location { "lyon"}
     admin { FactoryBot.create(:user) }
   end
 end
