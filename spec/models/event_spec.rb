@@ -24,9 +24,12 @@ RSpec.describe Event, type: :model do
 
   describe "#title" do
     it { expect(@event).to validate_presence_of(:title) }
+    it { is_expected.to allow_value("bonjour").for(:title) }
+    it { is_expected.to_not allow_value("aaa").for(:title) }
   end
 
   describe "#description" do
+    it { is_expected.to_not allow_value("aaaa").for(:description) }
     it { expect(@event).to validate_presence_of(:description) }
   end
 
@@ -39,11 +42,8 @@ RSpec.describe Event, type: :model do
   end
 
   context "associations" do
-    it { should belong_to(:admin).class_name("User")}
-    it { should have_many(:attendances)}
-    it { should have_many(:inviteds).class_name("User").through(:attendances)}
+    it { expect(@event).to have_many(:attendances) }
+    it { expect(@event).to have_many(:attendees) }
+    it { expect(@event).to belong_to(:administrator) }
   end
-
-
 end
-

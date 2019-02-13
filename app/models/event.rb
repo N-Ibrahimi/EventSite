@@ -16,4 +16,9 @@ class Event < ApplicationRecord
   def future_date
     errors.add(:start_date,"la date doit être apartir d'aujourd'hui") unless start_date.present? && start_date > Date.today
   end
+
+  def end_date
+    self.start_date.to_i + duration.to_i
+  end
+  
 end

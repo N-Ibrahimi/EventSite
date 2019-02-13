@@ -1,0 +1,33 @@
+<div class="container">
+      <h3>Pour nous cantacter Merci de rempir le formulaire et l'envoyer</h3>
+      <p>bien evidemment pour qu'on puisse te repondre, il nous faut ton adresse mail  😉  </p>
+<form>
+  <div class="form" style="display: inline-block">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for="first_name">First name:</label>
+    <div class="col-sm-4" style="display: inline-block">
+      <input type="text" class="first_name" placeholder="Nasim">
+    </div>
+    <div class="form2">
+    <label for="last_name">Last name:</label>
+    <div class="col-sm-4" style="display: inline-block">
+      <input type="text" class="last_name"placeholder="Ibrahimi">
+    </div>
+  </div>
+  <div class="form3">
+    <label for="email" style="display: inline-block" >Email add: </label>
+    <div class="col-sm-4" style="display: inline-block">
+      <input type="text" class="email" placeholder="exemple@exemple.com">
+    </div>
+  </div>
+  <br>
+  <div class="from4">
+  <textarea  class="col-sm-6 name="message" form="message" rows="10" cols="150" placeholder="Enter your message"></textarea><br><br>
+   </div>
+  <div class="form-group row">
+    <div class="col-sm-2">
+      <button type="submit" class="btn btn-primary">Envoyer</button>
+    </div>
+  </div>
+</form>
+</div>

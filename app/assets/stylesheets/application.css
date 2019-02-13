@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+ body{ 
+	background-image: url("https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg?auto=compress&cs=tinysrgb&h=650&w=940");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	font-size: 15px;
+	background-attachment: fixed;
+  }
+  
+  h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 35px; 
+	font-weight: bolder;
+	text-shadow: 1px 2px 4px rgb(190, 158, 14);
+	}
+	
+  h2 {
+	font-weight: bolder;
+	text-shadow: 1px 2px 4px rgb(190, 64, 14);
+  }
+  
+  h3 {
+  font-weight: bolder;
+  text-shadow: 1px 2px 4px rgb(146,216,58);
+	}
