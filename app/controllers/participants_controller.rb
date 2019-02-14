@@ -1,4 +1,4 @@
-class InvitedsController < ApplicationController
+class ParticipationsController < ApplicationController
   def index 
     @participants = Attendance.where(event_id: params[:event_id])
     puts @participants

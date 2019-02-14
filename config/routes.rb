@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   
   resources :events do 
-    resources :participations, only: [:index, :new, :create, :show]
+    resources :participations, only: [:index,:show, :new, :create ]
   end
  
   devise_for :users
