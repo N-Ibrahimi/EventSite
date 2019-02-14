@@ -1,39 +1,41 @@
-<div class="container ">
-<div class="d-flex mt-10 mb-0 p-3 rounded text-center bg-success">
-<h1 class=" text-center  text-white"  style="display: inline-block"> Event</h1> 
-<a class=" ml-auto p-2 btn btn-primary btn-lg " href="" role="button" style="display: inline-block">Subscribe</a>
+
+<center>
+
+<div class="container">
+<div class="card border-secondary col-md-7 m-2">
+<div class="card-header col-lg-12 d-flex m-0 p-1 rounded text-center bg-light", width=100%>
+<h1 class=" text-center  text-info"  style="display: inline-block"> Event</h1> 
+<a class=" ml-auto p-2 btn btn-primary btn-lg " href="#" role="button" style="display: inline-block">Subscribe</a>
 </div>
-<div class="bg-warning p-4 ">
-      <div class="row">
-        <div class="col-2"><h5>Title:</h5></div><div class="col-6"><h5 class="text-primary font-italic"><%= @event.title%></h5></div>
+<div class="card-body px-0 py-3 mx-0 my-1">
+
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Title:</p></div><div class="col-6"><p class="text-primary font-italic"><%= @event.title%></p></div>
       </div>
 
-      <div class="row">
-        <div class="col-2"><h5>Date:</h5></div><div class="col-6"><h5 class="text-danger font-italic"><%= @event.start_date.strftime("%m/%d/%Y")%></div>
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Date:</p></div><div class="col-6"><p class="text-danger font-italic"><%= @event.start_date%></div>
       </div>
 
-      <div class="row">
-        <div class="col-2"><h5>Lieu:</h5></div><div class="col-6"><h5 class="text-primary font-italic"><%= @event.location %></h5></div>
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Lieu:</p></div><div class="col-6"><p class="text-primary font-italic"><%= @event.location %></p></div>
       </div>
 
-      <div class="row">
-        <div class="col-2"><h5>Price:</h5></div><div class="col-6"><h5 class="text-primary font-italic"><%= @event.price%>€</h5></div>
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Price:</p></div><div class="col-6"><p class="text-primary font-italic"><%= @event.price%>€</p></div>
       </div>
 
-      <div class="row">
-        <div class="col-2"><h5>Duration: </h5></div><div class="col-6"><h5 class="text-primary font-italic"><%= @event.duration%></h5></div>
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Duration: </p></div><div class="col-6"><p class="text-primary font-italic"><%= @event.duration%></p></div>
       </div>
 
-      <div class="row">
-        <div class="col-2"><h5>Nombre des Participants: </h5></div><div class="col-6"><h5 class="text-primary font-italic"><%=@present.all.count %></h5></div>
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Nombre des Participants: </p></div><div class="col-6"><p class="text-primary font-italic"><%=@present.all.count %></p></div>
       </div>
 
-      <div class="row">
-        <div class="col-2"><h5>Description</h5></td><div class="col-6">
-      </div>
-</div>
-      <div  class="col-5">
-      <h5><%=@event.description%></h5>
-      </div>
+      <div class="row text-left  justify-content-center">
+        <div class="col-4"> <p class="font-weight-bold">Description:</p></div><div class="col-6"> <p><%=@event.description%></p></div>
      </div>
+ </div>
+  </div>
 
