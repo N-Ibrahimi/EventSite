@@ -1,0 +1,28 @@
+
+<div class="container mt-2 mb-5">
+<h2> Liste des participants </h2>
+<a class="" href="<%= edit_event_path(@event.id) %>" role="button">Editer</a>
+<a href="<%= event_path(@event.id)%>" data-confirm="Voulez-vous vraiment supprimer cet événément?" data-method="DELETE"><i class="fas fa-trash-alt"></i></a>
+  <table class="table table-striped mt-4" style="background-color: #e3f2fd;">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Event Id</th>
+        <th scope="col">Guest Id</th>
+        <th scope="col">Email</th>
+        <th scope="col">Titre Event</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @participants.each do |attendee| %>
+        <tr>
+          <th scope="row"><%= %></th>
+          <td><%= attendee.event.id %></td>
+          <td><%= attendee.guest.id %></td>
+          <td><%= attendee.guest.email %></td>
+          <td><%= attendee.event.title %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

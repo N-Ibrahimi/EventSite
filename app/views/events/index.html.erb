@@ -1,8 +1,17 @@
 
 	<div class="container">
         <h2 class="text-center"> Nos evenments</h2>
-        <h6 class="d-flex justify-content-center">À ce jour il y a<span class="text-danger ml-3 mr-2"><%= Event.all.count %></span>events </h6>      
-        <a class="btn btn-success btn-lg btn-block mb-3" href="/events/new" role="button">Créer un événement</a>
+        
+        <h6 class="d-flex justify-content-center">À ce jour il y a<span class="text-danger ml-3 mr-2"><%= Event.all.count %></span>events </h6> 
+        <% if user_signed_in? %> 
+            <a class="btn btn-success btn-lg btn-block mb-3" href="<%= new_event_path %>" role="button">Créer un événement</a>
+          <% end %>     
+           <% flash.each do |name, message| %>
+          <div class="alert alert-<%= name %> text-center">
+            <%= message %>
+          </div>
+            <% end %>
+       
         
         <div class="body" style="display:flex-wrap:wrap; width:100%; height:auto">
                 <% @events.each do |event| %> 

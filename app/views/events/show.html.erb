@@ -36,6 +36,24 @@
       <div class="row text-left  justify-content-center">
         <div class="col-4"> <p class="font-weight-bold">Description:</p></div><div class="col-6"> <p><%=@event.description%></p></div>
      </div>
- </div>
-  </div>
+<% if user_signed_in? %>
+    <% if current_user == @event.admin %>
+    <a class="btn btn-dark btn-lg" href="<%= edit_event_path(@event.id) %>" role="button">Editer</a>
+    <a class="btn btn-default text-dark" href="<%= event_participations_path(@event.id) %>">Les participants</a>
+    <% end %>
 
+    <% if current_user.id != @event.admin.id && is_user_going == true %>
+    <a class="btn btn-dark btn-lg" href="<%= new_event_participation_path(@event.id) %>" role="button">Rejoindre l'événement</a>
+    <% end %>
+
+    <% if is_user_going != true %>
+    <a class="btn btn-dark btn-lg" target="_blank" href="#">Retirer sa participation</a>
+    <% end %>
+
+  <% else %>
+  <% flash[:primary] = "Connectez vous pour pouvoir participer à un événement" %>
+  <% end %>
+  </p>
+
+  </div>
+</div>
